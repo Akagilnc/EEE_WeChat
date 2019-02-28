@@ -1,0 +1,4 @@
+WeRobot >= 1.8.0
+Flask>=0.10.1,<1.0.0
+Flask-Sockets>=0.1,<1.0
+leancloud>=2.0.0,<3.0.0
