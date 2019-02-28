@@ -3,8 +3,6 @@ robot = WeRoBot()
 robot.config["APP_ID"] = "wx9c5976119b523f2c"
 robot.config["APP_SECRET"] = "bee50d69573253dcb7b97f15094d0660"
 
-client = robot.client
-
 
 def create_menu(robot):
     robot.client.create_menu({
@@ -29,4 +27,4 @@ def create_menu(robot):
 
 
 if __name__ == "__main__":
-    create_menu(client)
+    create_menu(robot)
