@@ -11,7 +11,7 @@ def hello(message):
 
 @robot.text
 def hello(message):
-    if message.content in ['hello', '你好', '好', 'hi']:
+    if message.content.lower() in ['hello', '你好', '好', 'hi']:
         return "Hello wechat world"
     return "主人正在努力挖土烧砖盖楼 \n内容很快就来 \n不要着急 \n休息 \n休息一下"
 
