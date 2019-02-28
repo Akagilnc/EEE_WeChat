@@ -11,6 +11,7 @@ def hello(message):
 
 @robot.text
 def hello(message):
+    print(message.content)
     if message.content.lower() in ['hello', '你好', '好', 'hi']:
         return "Hello wechat world，你好欢迎来到微信的世界"
     if message.content.lower() == ['ak', '猩猩', '李胖娃', '胖娃', '胖娃儿']:
