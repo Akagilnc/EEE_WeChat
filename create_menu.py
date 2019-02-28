@@ -26,3 +26,7 @@ def create_menu(robot):
             }
         ]
     })
+
+
+if __name__ == "__main__":
+    create_menu(client)
