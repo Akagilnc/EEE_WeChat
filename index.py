@@ -26,4 +26,4 @@ def menu1(message):
                       url='''https://mp.weixin.qq.com/advanced/selfmenu?action=index&t=advanced
                       /menu-setting&token=1153211364&lang=zh_CN''')
     reply.add_article(article)
-    return "https://mp.weixin.qq.com/advanced/selfmenu?action=index&t=advanced/menu-setting&token=1153211364&lang=zh_CN"
+    return reply
