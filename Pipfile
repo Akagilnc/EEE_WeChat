@@ -6,13 +6,10 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-leancloud = "<3.0.0,>=2.0.0"
-Flask = ">=0.10.1,<1.0.0"
-gevent = ">=1.0.2,<2.0.0"
-gevent-websocket = ">=0.9.5,<1.0.0"
-flask-sockets = ">=0.1,<1.0"
-WeRoBot = ">=1.8.0"
-Werkzeug = ">=0.11.11,<1.0.0"
+werobot = ">=1.8.0"
+flask = ">=0.10.1,<1.0.0"
+flask-sockets = "<1.0,>=0.1"
+leancloud = ">=2.0.0,<3.0.0"
 
 [requires]
 python_version = "3.7"
