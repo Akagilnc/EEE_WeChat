@@ -13,6 +13,8 @@ def hello(message):
 def hello(message):
     if message.content.lower() in ['hello', '你好', '好', 'hi']:
         return "Hello wechat world，你好欢迎来到微信的世界"
+    if message.content.lower() == "ak":
+        return "Ak loves Winnie"
     return "主人正在努力挖土烧砖盖楼 \n内容很快就来 \n不要着急 \n休息 \n休息一下"
 
 
