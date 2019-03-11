@@ -16,7 +16,7 @@ def hello(message):
 def hello(message):
     print(message.content)
     if message.content.lower() in ['hello', '你好', '好', 'hi']:
-        return "Hello wechat world，你好欢迎来到的世界"
+        return "Hello 欢迎来到【3E女子商学院】的世界"
     if message.content.lower() in ['ak', '猩猩', '李胖娃', '胖娃', '胖娃儿']:
         return "{} loves Winnie".format(message.content)
     if message.content.lower() in ['课表', 'kebiao', '课程表', '日程']:
