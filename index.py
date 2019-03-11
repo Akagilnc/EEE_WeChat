@@ -6,14 +6,17 @@ robot = werobot.WeRoBot(token='eeewomenbusinessacademy')
 
 @robot.subscribe
 def hello(message):
-    return "Hi \n不知道你是怎么发现这个公众号的 \n不过 \n一起玩吧!"
+    return '''感谢关注【3E女子商学院】3E即3要素（Three Elements）人、财、务3要素。
+    【3E女子商学院】目前主要通过线下为期2个月的初创女性训练营与后期陪伴式的创业咨询、指导，以提升女性初创业者的综合能力，解决初创公司人、财、务3方面的问题。
+    欢迎有志成为女老板的小伙伴加入我们，详情可私信【3E女子商学院】教务处微信服务号：17308077367。
+    【3E女子商学院】2019年度初创女性训练营第05、06、07期报名即日开始，报名链接 : http://na6pe3xlrb1jajy5.mikecrm.com/q19wZQs'''
 
 
 @robot.text
 def hello(message):
     print(message.content)
     if message.content.lower() in ['hello', '你好', '好', 'hi']:
-        return "Hello wechat world，你好欢迎来到微信的世界"
+        return "Hello wechat world，你好欢迎来到的世界"
     if message.content.lower() in ['ak', '猩猩', '李胖娃', '胖娃', '胖娃儿']:
         return "{} loves Winnie".format(message.content)
     if message.content.lower() in ['课表', 'kebiao', '课程表', '日程']:
