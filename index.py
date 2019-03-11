@@ -23,8 +23,7 @@ def hello(message):
         reply = ArticlesReply(message=message)
         article = Article(title="课表",
                           description="3E女子商学院课表",
-                          img='''https://mmbiz.qpic.cn/mmbiz_jpg/
-                          oqDcEECT3yiaEZI5otdM0W4F994Yaa96ibmecQiczt3D1DvvWUFtVBRRoEhVyDw74VCem5rt51QyWKz2KUoQ1sMdw/0?wx_fmt=jpeg''',
+                          img='''https://github.com/Akagilnc/Landing_Page_3EWBS/blob/master/img/3e_logo.jpeg''',
                           url='''http://www.3ewbs.com/class_schedule''')
         reply.add_article(article)
         return reply
