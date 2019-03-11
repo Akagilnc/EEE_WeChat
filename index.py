@@ -16,6 +16,15 @@ def hello(message):
         return "Hello wechat world，你好欢迎来到微信的世界"
     if message.content.lower() in ['ak', '猩猩', '李胖娃', '胖娃', '胖娃儿']:
         return "{} loves Winnie".format(message.content)
+    if message.content.lower() in ['课表', 'kebiao', '课程表', '日程']:
+        reply = ArticlesReply(message=message)
+        article = Article(title="课表",
+                          description="3E女子商学院课表",
+                          img='''https://mmbiz.qpic.cn/mmbiz_jpg/RnMhjm9oqzBG3
+                              PcfuXDcxOdd9BhUBKibIMXDdOicU0sEKa1tYy1JOFsGu3icG73Xh4p0zSgicXP6zKJ5JWPPO5BLKQ/0?wx_fmt=jpeg''',
+                          url='''http://www.3ewbs.com/class_schedule''')
+        reply.add_article(article)
+        return reply
     return "主人正在努力挖土烧砖盖楼 \n内容很快就来 \n不要着急 \n休息 \n休息一下"
 
 
