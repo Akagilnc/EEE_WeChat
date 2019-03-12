@@ -5,7 +5,7 @@ from werobot.client import Client
 robot = werobot.WeRoBot(token='eeewomenbusinessacademy')
 client = Client(config={
     'APP_ID': 'wx3ff24c6f361db7c0',
-    'APP_SECRET': 'wx3ff24c6f361db7c0'
+    'APP_SECRET': '42d3c288053541acb9a1b73da8a7b175'
 })
 
 
