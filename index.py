@@ -41,6 +41,15 @@ def hello(message):
                           url='''http://www.3ewbs.com/class_schedule''')
         reply.add_article(article)
         return reply
+    if message.content.lower() in ['location', '地点']:
+        reply = ArticlesReply(message=message)
+        article = Article(title="地点",
+                          description="上课地点",
+                          img='''https://github.com/Akagilnc/Landing_Page_3EWBS/blob/master/img/3e_logo.jpeg?raw=true''',
+                          url='''https://uri.amap.com/navigation?to=104.062617,30.539173,
+                          endpoint&mode=car&policy=1&src=mypage&coordinate=gaode&callnative=1&zoom=16''')
+        reply.add_article(article)
+        return reply
     return "主人正在努力挖土烧砖盖楼 \n内容很快就来 \n不要着急 \n休息 \n休息一下"
 
 
