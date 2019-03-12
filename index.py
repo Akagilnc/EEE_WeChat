@@ -10,8 +10,10 @@ client = Client(config={
 
 
 @robot.subscribe
-def hello(message):
-    print(client.get_user_info(message.source, lang='zh_CN'))
+def hello(message, session):
+    user_info = client.get_user_info(message.source, lang='zh_CN')
+    session[message.source] = user_info
+    print(user_info)
     return '''感谢关注【3E女子商学院】3E即3要素（Three Elements）人、财、务3要素。
     【3E女子商学院】目前主要通过线下为期2个月的初创女性训练营与后期陪伴式的创业咨询、指导，以提升女性初创业者的综合能力，解决初创公司人、财、务3方面的问题。
     欢迎有志成为女老板的小伙伴加入我们，详情可私信【3E女子商学院】教务处微信服务号：17308077367。
@@ -19,8 +21,8 @@ def hello(message):
 
 
 @robot.unsubscribe
-def goodbye(message):
-    print(client.get_user_info(message.source, lang='zh_CN'))
+def goodbye(message, session):
+    print(session[message.source])
     return 'success'
 
 
