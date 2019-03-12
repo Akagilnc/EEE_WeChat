@@ -22,7 +22,7 @@ def hello(message, session):
 
 @robot.unsubscribe
 def goodbye(message, session):
-    print(session[message.source])
+    print(session.get(message.source, 'subscribed before 2019.3.12'))
     return 'success'
 
 
