@@ -12,6 +12,12 @@ def hello(message):
     【3E女子商学院】2019年度初创女性训练营第05、06、07期报名即日开始，报名链接 : http://na6pe3xlrb1jajy5.mikecrm.com/q19wZQs'''
 
 
+@robot.unsubscribe
+def goodbye(message):
+    print(message.events.UnSubscribeEvent.source)
+    return 'success'
+
+
 @robot.text
 def hello(message):
     print(message.content)
