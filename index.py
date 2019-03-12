@@ -14,7 +14,7 @@ def hello(message):
 
 @robot.unsubscribe
 def goodbye(message):
-    print(message.events.UnSubscribeEvent.source)
+    print(message.source)
     return 'success'
 
 
