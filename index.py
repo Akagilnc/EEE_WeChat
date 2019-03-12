@@ -1,7 +1,12 @@
 import werobot
 from werobot.replies import ArticlesReply, Article
+from werobot.client import Client
 
 robot = werobot.WeRoBot(token='eeewomenbusinessacademy')
+client = Client(config={{
+    'APP_ID': 'wx3ff24c6f361db7c0',
+    'APP_SECRET': 'wx3ff24c6f361db7c0'
+}})
 
 
 @robot.subscribe
@@ -14,7 +19,7 @@ def hello(message):
 
 @robot.unsubscribe
 def goodbye(message):
-    print(message.source)
+    print(client.get_user_info(message.source))
     return 'success'
 
 
