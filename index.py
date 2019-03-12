@@ -19,7 +19,7 @@ def hello(message):
 
 @robot.unsubscribe
 def goodbye(message):
-    print(client.get_user_info(message.source))
+    print(client.get_user_info(message.source, lang='zh_CN'))
     return 'success'
 
 
