@@ -1,6 +1,7 @@
 import werobot
 from werobot.replies import ArticlesReply, Article
 from werobot.client import Client
+import requests
 
 robot = werobot.WeRoBot(token='eeewomenbusinessacademy')
 client = Client(config={
@@ -8,8 +9,13 @@ client = Client(config={
     'APP_SECRET': '42d3c288053541acb9a1b73da8a7b175'
 })
 
-token = client.grant_token()
+token = client.grant_token().get('access_token', None)
 print(token)
+if token:
+    URL = 'https://api.weixin.qq.com/cgi-bin/user/tag/get?access_token=ACCESS_TOKEN'
+    params = {'tagid': "1"}
+    response = requests.get(url=URL, params=params)
+    print(response.json())
 
 @robot.subscribe
 def hello(message, session):
