@@ -10,6 +10,8 @@ client = Client(config={
 })
 
 token = client.grant_token().get('access_token', None)
+groups = client.get_groups()
+print(groups)
 print(token)
 if token:
     URL = 'https://api.weixin.qq.com/cgi-bin/user/tag/get?access_token={token}'.format(token=token)
