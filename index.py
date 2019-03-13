@@ -1,5 +1,5 @@
 import werobot
-from werobot.replies import ArticlesReply, Article
+from werobot.replies import ArticlesReply, Article, ImageReply
 from werobot.client import Client
 import requests, json
 
@@ -8,6 +8,8 @@ client = Client(config={
     'APP_ID': 'wx3ff24c6f361db7c0',
     'APP_SECRET': '42d3c288053541acb9a1b73da8a7b175'
 })
+
+client.get_media_list('image', 0, 20)
 
 
 def send_reminder():
@@ -48,6 +50,11 @@ def goodbye(message, session):
     return 'success'
 
 
+@robot.location
+def location():
+    return 'success'
+
+
 @robot.text
 def hello(message):
     print(message.content)
@@ -64,6 +71,7 @@ def hello(message):
         reply.add_article(article)
         return reply
     if message.content.lower() in ['location', '地点']:
+        reply = ImageReply()
         reply = ArticlesReply(message=message)
         article = Article(title="地点",
                           description="上课地点",
