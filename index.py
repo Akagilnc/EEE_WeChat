@@ -8,6 +8,8 @@ client = Client(config={
     'APP_SECRET': '42d3c288053541acb9a1b73da8a7b175'
 })
 
+token = client.grant_token()
+print(token)
 
 @robot.subscribe
 def hello(message, session):
