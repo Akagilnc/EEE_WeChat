@@ -12,7 +12,7 @@ client = Client(config={
 token = client.grant_token().get('access_token', None)
 groups = client.get_groups()
 tag_id = -1
-for group in groups:
+for group in groups['groups']:
     if group.get('name', None) == '3E_Inner':
         tag_id = group['id']
         break
