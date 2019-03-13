@@ -15,10 +15,9 @@ tag_id = -1
 for group in groups['groups']:
     if group.get('name', None) == '3E_Inner':
         tag_id = group['id']
+        print(tag_id)
         break
 
-print(groups)
-print(token)
 if token:
     URL = 'https://api.weixin.qq.com/cgi-bin/user/tag/get?access_token={token}'.format(token=token)
     params = {'tagid': tag_id}
