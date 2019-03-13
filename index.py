@@ -1,7 +1,7 @@
 import werobot
 from werobot.replies import ArticlesReply, Article
 from werobot.client import Client
-import requests
+import requests, json
 
 robot = werobot.WeRoBot(token='eeewomenbusinessacademy')
 client = Client(config={
@@ -20,8 +20,8 @@ for group in groups['groups']:
 
 if token:
     URL = 'https://api.weixin.qq.com/cgi-bin/user/tag/get?access_token={token}'.format(token=token)
-    params = "{'tagid': tag_id}"
-    response = requests.post(url=URL, json=params)
+    params = {'tagid': tag_id}
+    response = requests.get(url=URL, params=json.dumps(params))
     print(response.json())
 
 @robot.subscribe
