@@ -9,25 +9,26 @@ client = Client(config={
     'APP_SECRET': '42d3c288053541acb9a1b73da8a7b175'
 })
 
-token = client.grant_token().get('access_token', None)
-groups = client.get_groups()
-tag_id = -1
-for group in groups['groups']:
-    if group.get('name', None) == '3E_Inner':
-        tag_id = group['id']
-        print(tag_id)
-        break
 
-if token:
-    URL = 'https://api.weixin.qq.com/cgi-bin/user/tag/get?access_token={token}'.format(token=token)
-    params = {'tagid': tag_id}
-    response = requests.post(url=URL, json=params)
-    if response.json()['count'] > 0:
-        user_infos = client.get_users_info(response.json()['data']['openid'])['user_info_list']
-        for user_info in user_infos:
-            message = "亲爱的{}，这是来自ak老师的定向发送消息\n".format(user_info.get('nickname', '没有昵称的人'))
-            message += '你的手机系统语言为{}, 填写的国家信息为{}, Have fun'.format(user_info['language'], user_info['country'])
-            client.send_text_message(user_info['openid'], message)
+def send_reminder():
+    token = client.grant_token().get('access_token', None)
+    groups = client.get_groups()
+    tag_id = -1
+    for group in groups['groups']:
+        if group.get('name', None) == '3E_Inner':
+            tag_id = group['id']
+            print(tag_id)
+            break
+    if token:
+        URL = 'https://api.weixin.qq.com/cgi-bin/user/tag/get?access_token={token}'.format(token=token)
+        params = {'tagid': tag_id}
+        response = requests.post(url=URL, json=params)
+        if response.json()['count'] > 0:
+            user_infos = client.get_users_info(response.json()['data']['openid'])['user_info_list']
+            for user_info in user_infos:
+                message = "亲爱的{}，这是来自ak老师的定向发送消息\n".format(user_info.get('nickname', '没有昵称的人'))
+                message += '你的手机系统语言为{}, 填写的国家信息为{}, Have fun'.format(user_info['language'], user_info['country'])
+                client.send_text_message(user_info['openid'], message)
 
 
 @robot.subscribe
