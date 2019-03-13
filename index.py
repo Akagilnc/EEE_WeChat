@@ -12,7 +12,7 @@ client = Client(config={
 token = client.grant_token().get('access_token', None)
 print(token)
 if token:
-    URL = 'https://api.weixin.qq.com/cgi-bin/user/tag/get?access_token=ACCESS_TOKEN'
+    URL = 'https://api.weixin.qq.com/cgi-bin/user/tag/get?access_token={token}'.format(token=token)
     params = {'tagid': "1"}
     response = requests.get(url=URL, params=params)
     print(response.json())
