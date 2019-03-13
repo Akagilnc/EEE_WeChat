@@ -14,7 +14,7 @@ print(token)
 if token:
     URL = 'https://api.weixin.qq.com/cgi-bin/user/tag/get?access_token={token}'.format(token=token)
     params = {'tagid': "1"}
-    response = requests.get(url=URL, params=params)
+    response = requests.post(url=URL, data=params)
     print(response.json())
 
 @robot.subscribe
