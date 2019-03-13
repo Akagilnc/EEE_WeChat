@@ -23,8 +23,12 @@ if token:
     params = {'tagid': tag_id}
     response = requests.post(url=URL, json=params)
     if response.json()['count'] > 0:
-        user_infos = client.get_users_info(response.json()['data']['openid'])
-    print(user_infos)
+        user_infos = client.get_users_info(response.json()['data']['openid'])['user_info_list']
+        for user_info in user_infos:
+            message = "亲爱的{}，这是来自ak老师的定向发送消息\n".format(user_info.get('nickname', '没有昵称的人'))
+            message += '你的手机系统语言为{}, 填写的国家信息为{}, Have fun'.format(user_info['language'], user_info['country'])
+            client.send_text_message(user_info['openid'], message)
+
 
 @robot.subscribe
 def hello(message, session):
