@@ -54,6 +54,7 @@ def goodbye(message, session):
 
 
 @robot.location
+@robot.location_event
 def location():
     return 'success'
 
