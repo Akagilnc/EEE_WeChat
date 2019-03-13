@@ -11,11 +11,17 @@ client = Client(config={
 
 token = client.grant_token().get('access_token', None)
 groups = client.get_groups()
+tag_id = -1
+for group in groups:
+    if group.get('name', None) == '3E_Inner':
+        tag_id = group['id']
+        break
+
 print(groups)
 print(token)
 if token:
     URL = 'https://api.weixin.qq.com/cgi-bin/user/tag/get?access_token={token}'.format(token=token)
-    params = {'tagid': "1"}
+    params = {'tagid': tag_id}
     response = requests.post(url=URL, data=params)
     print(response.json())
 
