@@ -22,7 +22,9 @@ if token:
     URL = 'https://api.weixin.qq.com/cgi-bin/user/tag/get?access_token={token}'.format(token=token)
     params = {'tagid': tag_id}
     response = requests.post(url=URL, json=params)
-    print(response.json())
+    if response.json()['count'] > 0:
+        user_infos = client.get_users_info(response.json()['data']['openid'])
+    print(user_infos)
 
 @robot.subscribe
 def hello(message, session):
