@@ -10,7 +10,7 @@ client = Client(config={
 })
 
 res = client.get_media_list('image', 0, 20)
-print(res.json())
+print(res)
 
 def send_reminder():
     token = client.grant_token().get('access_token', None)
