@@ -74,7 +74,7 @@ def hello(message):
         reply.add_article(article)
         return reply
     if message.content.lower() in ['location', '地点', '教室']:
-        reply = ImageReply('CVHC0-1CfQ0wxmPCoRJIMb5cCwT4-FW2isvtvihEoTM')
+        reply = ImageReply(message=message, media_id='CVHC0-1CfQ0wxmPCoRJIMb5cCwT4-FW2isvtvihEoTM')
         return reply
     return "主人正在努力挖土烧砖盖楼 \n内容很快就来 \n不要着急 \n休息 \n休息一下"
 
