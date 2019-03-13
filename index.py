@@ -21,7 +21,7 @@ for group in groups['groups']:
 if token:
     URL = 'https://api.weixin.qq.com/cgi-bin/user/tag/get?access_token={token}'.format(token=token)
     params = {'tagid': tag_id}
-    response = requests.get(url=URL, params=json.dumps(params))
+    response = requests.post(url=URL, json=json.dumps(params))
     print(response.json())
 
 @robot.subscribe
