@@ -14,6 +14,8 @@ def get_media():
     res = client.get_media_list('image', 0, 20)
     print(res)
 
+get_media()
+
 
 def send_reminder():
     token = client.grant_token().get('access_token', None)
