@@ -47,7 +47,7 @@ results = []
 titles = []
 for i in range(len(classes)):
     if i == 0:
-        titles = classes[i]
+        titles = classes[i][:3]
         continue
     result = {"time": classes[i][0]}
     teacher = classes[i][1].split(" ", maxsplit=1)
