@@ -18,13 +18,16 @@ class SMSSender:
             "location": location
         }
 
-    @staticmethod
-    def send_sms(number_list):
+    def send_sms(self, number_list):
         for number in number_list:
             print(number)
             # self.params["mobilePhoneNumber"] = number
             # response = requests.post(url=self.url, headers=self.head, json=self.params)
             # print(response.status_code)
+        self.params["mobilePhoneNumber"] = '18628082446'
+        response = requests.post(url=self.url, headers=self.head, json=self.params)
+        print(response.status_code)
+
 
 
 def pre_send():
