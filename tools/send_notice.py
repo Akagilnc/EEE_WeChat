@@ -32,8 +32,8 @@ class SMSSender:
 
 def pre_send():
     sender = SMSSender(n='4',
-                       date='2019 年 10 月 31 号',
-                       course='创业公司 的 法律风险防控',
+                       date='3月24日上午9点',
+                       course='个人天赋发挥与发现',
                        location='菁蓉汇3A座9楼路演厅')
     number_list = open('phone_numbers.txt').readlines()
     print(number_list)
