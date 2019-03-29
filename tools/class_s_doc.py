@@ -61,3 +61,5 @@ for i in range(len(classes)):
 with open('index.json', 'w', encoding='utf-8') as file:
     results_json = {'titles': [{'title': item} for item in titles], 'classes': results}
     json.dump([results_json], file, ensure_ascii=False)
+
+
