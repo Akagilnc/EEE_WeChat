@@ -27,9 +27,9 @@ class SMSSender:
 
 
 def pre_send():
-    sender = SMSSender(n='9',
-                       date='4月10日晚上7点',
-                       course='如何通过品牌升级实现业绩增长',
+    sender = SMSSender(n='19',
+                       date='5月8日，今天晚上7点',
+                       course='路演怎么演',
                        location='菁蓉汇3A座9楼路演厅')
     number_list = open('phone_numbers.txt').readlines()
     sender.send_sms([number.strip() for number in number_list])
@@ -49,7 +49,7 @@ from pytz import timezone
 tz_utc_8 = timezone('Asia/Shanghai')
 print(tz_utc_8)
 scheduler = BlockingScheduler(timezone=tz_utc_8)
-run_time = datetime(2019, 4, 9, 19, 00, 30)
+run_time = datetime(2019, 5, 8, 10, 15, 00)
 scheduler.add_job(tick, 'date', next_run_time=run_time)
 print('Press Ctrl+{0} to exit'.format('Break' if os.name == 'nt' else 'C    '))
 
@@ -57,3 +57,5 @@ try:
     scheduler.start()
 except (KeyboardInterrupt, SystemExit):
     pass
+
+

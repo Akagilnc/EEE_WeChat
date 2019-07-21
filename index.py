@@ -71,7 +71,7 @@ def hello(message):
         article = Article(title="课表",
                           description="3E女子商学院课表",
                           img='''https://github.com/Akagilnc/Landing_Page_3EWBS/blob/master/img/3e_logo.jpeg?raw=true''',
-                          url='''http://www.3ewbs.com/class_schedule''')
+                          url='''http://www.3ewbs.com/class_schedule.html''')
         reply.add_article(article)
         return reply
     if message.content.lower() in ['location', '地点', '教室']:
