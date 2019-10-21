@@ -11,7 +11,7 @@ flask = ">=0.10.1,<1.0.0"
 flask-sockets = ">=0.1,<1.0"
 leancloud = ">=2.0.0,<3.0.0"
 requests = "*"
-werkzeug = "==0.15.2"
+werkzeug = "==0.15.3"
 panda = "*"
 itchat = "*"
 
